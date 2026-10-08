@@ -15,6 +15,7 @@ import { CtaBand, DocumentationSection, HowItWorks, TrustSection } from "@/compo
 import { FinderTeaser } from "@/components/marketing/finder-teaser";
 import { Testimonials } from "@/components/marketing/testimonials";
 import { Faq } from "@/components/marketing/faq";
+import { StudentBenefits } from "@/components/marketing/student-benefits";
 import { StatsStrip } from "@/components/marketing/stats-strip";
 import { ProjectGrid } from "@/components/projects/project-grid";
 
@@ -49,6 +50,16 @@ export default async function HomePage() {
       <Hero degrees={degrees} showcase={showcase} />
 
       <StatsStrip projects={projects.length} />
+
+      <Section id="for-students" aria-labelledby="students-title">
+        <SectionHeading
+          id="students-title"
+          eyebrow="For final-year students"
+          title="Everything you need for your final-year project, in one place"
+          description="No more searching GitHub for days. Choose a project, understand it, and get help right until your viva."
+        />
+        <StudentBenefits />
+      </Section>
 
       <Section id="degrees" aria-labelledby="degrees-title">
         <SectionHeading

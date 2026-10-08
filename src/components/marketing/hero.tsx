@@ -21,19 +21,34 @@ export function Hero({ degrees, showcase }: { degrees: DegreeDTO[]; showcase: Pr
               <span className="absolute inline-flex size-full animate-ping rounded-full bg-whatsapp opacity-60 motion-reduce:hidden" />
               <span className="relative inline-flex size-2 rounded-full bg-whatsapp" />
             </span>
-            Source code · Live demos · Documentation · Support
+            Made for final-year students · BCA · MCA · BSc IT · B.Tech
           </p>
 
           <h1 id="hero-title" className="mt-6 text-[2.5rem] leading-[1.05] font-semibold tracking-[-0.035em] sm:text-5xl lg:text-6xl">
             Your Final-Year Project <span className="text-gradient">Starts Here.</span>
           </h1>
           <p className="mt-5 max-w-xl text-lg leading-relaxed text-muted-foreground">
-            Explore modern Web, AI, E-Commerce, Mobile and Full-Stack projects built for technical students.
+            Find the right final-year project in minutes. Pick your degree, preview the live demo, and get source code,
+            report help, viva guidance and WhatsApp support — everything a student needs to submit with confidence.
           </p>
+
+          <ul className="mt-5 flex flex-wrap gap-2 text-sm font-medium" aria-label="What students get">
+            {[
+              ["Easy to find", "bg-primary/10 text-primary"],
+              ["Source code", "bg-brand-2/15 text-brand-2"],
+              ["Report & PPT help", "bg-brand-3/10 text-brand-3"],
+              ["Viva preparation", "bg-brand-4/15 text-brand-4"],
+              ["Student-friendly pricing", "bg-success/15 text-success"],
+            ].map(([label, tone]) => (
+              <li key={label} className={cn("rounded-full px-3 py-1", tone)}>
+                {label}
+              </li>
+            ))}
+          </ul>
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <Link href="/projects" className={cn(buttonVariants({ size: "lg" }), "h-12 rounded-xl px-6 text-base shadow-lg shadow-primary/20")}>
-              Explore Projects <ArrowRight className="size-4" aria-hidden />
+              Find My Project <ArrowRight className="size-4" aria-hidden />
             </Link>
             <WhatsAppButton intent="general" cta="hero" variant="outline" size="lg">
               Talk to Us on WhatsApp
